@@ -1,0 +1,9 @@
+CREATE OR REPLACE TRIGGER trg_novo_artigo
+AFTER INSERT ON Artigo
+FOR EACH ROW
+DECLARE
+BEGIN
+    INSERT INTO Log_Artigos (Id, Data_Criacao)
+    VALUES (:NEW.Id, SYSDATE);
+END;
+/
