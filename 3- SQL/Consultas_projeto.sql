@@ -6,11 +6,11 @@ GROUP BY E.CNPJ
 HAVING COUNT(*) > 3
 
 --Junção interna
--- Nome do artigo que foi escrito pelo autor de CPF '1111'
+-- Nome do artigo que foi escrito pelo autor de CPF '11111111111'
 SELECT a.Nome
 FROM Artigo a
 JOIN Escreve e ON a.Id = e.Id
-WHERE e.CPF = '1111';
+WHERE e.CPF = '11111111111';
 
 --Junção externa 
 -- Retornar todos os jornais juntamente com seus telefones correspondentes
@@ -60,7 +60,7 @@ SELECT J.CNPJ, J.end_cep, J.end_descr
 FROM Jornal J
 WHERE J.CNPJ IN (SELECT CNPJ 
 FROM Edicao 
-WHERE data_hora ='2024-01-01 17:00:00');
+WHERE data_hora ='2024-03-15 17:00:00');
 
 --OPERAÇÃO DE UNIÃO
 SELECT C.CPF
